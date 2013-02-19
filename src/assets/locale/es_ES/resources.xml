@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<editProfile>
+		<title>
+			EDITAR PERFIL
+		</title>
+		<doneButton>
+			<label>
+				HECHO
+			</label>
+		</doneButton>
+		<editProfileTab>
+			<profile>
+				<label>
+					PERFIL
+				</label>
+				<width>
+					45
+				</width>
+			</profile>
+			<details>
+				<label>
+					DETALLES
+				</label>
+				<width>
+					60
+				</width>
+			</details>
+			<photo>
+				<label>
+					FOTO
+				</label>
+				<width>
+					35
+				</width>
+			</photo>
+			<bio>
+				<label>
+					BIO
+				</label>
+				<width>
+					30
+				</width>
+			</bio>
+			<privacy>
+				<label>
+					PRIVACIDAD
+				</label>
+				<width>
+					75
+				</width>
+			</privacy>
+			<password>
+				<label>
+					CONTRASEÑA
+				</label>
+				<width>
+					75
+				</width>
+			</password>
+			<options>
+				<label>
+					OPCIONES
+				</label>
+				<width>
+					60
+				</width>
+			</options>
+			<rightHorizontalLine>
+				<width>
+					12
+				</width>
+			</rightHorizontalLine>
+		</editProfileTab>
+		<profileForm>
+			<label>
+				<text>
+					En iMeet, la gente te ve.
+				</text>
+			</label>
+			<label2>
+				<text>
+					Vamos a tomar un par de cosas para su perfil.
+				</text>
+			</label2>
+			<firstNameLabel>
+				<text>
+					Nombre*
+				</text>
+			</firstNameLabel>
+			<lastNameLabel>
+				<text>
+					Apellido*
+				</text>
+			</lastNameLabel>
+			<emailLabel>
+				<text>
+					Email*
+				</text>
+			</emailLabel>
+			<editButton>
+				<label>
+					Editar
+				</label>
+			</editButton>
+			<label3>
+				<text>
+					*Necesario
+				</text>
+			</label3>
+		</profileForm>
+		<detailsForm>
+			<actionVGroup>
+				<left>
+					100
+				</left>
+			</actionVGroup>
+			<jobTitleLabel>
+				<text>
+					Título del Trabajo
+				</text>
+			</jobTitleLabel>
+			<companyNameLabel>
+				<text>
+					Nombre de la Compañía
+				</text>
+			</companyNameLabel>
+			<primaryPhoneLabel>
+				<text>
+					Teléfono Principal
+				</text>
+			</primaryPhoneLabel>
+			<primaryPhoneInfoLabel>
+				<text>
+					Cuando la Reunión se le llama, Este Teléfono Conará.
+				</text>
+			</primaryPhoneInfoLabel>
+			<locationLabel>
+				<text>
+					Ubicación
+				</text>
+			</locationLabel>
+			<locationTickBox>
+				<label>
+					Buscar mi Ubicación
+				</label>
+			</locationTickBox>
+			<primaryPhoneDropDown>
+				<prompt>
+					Seleccionar
+				</prompt>
+			</primaryPhoneDropDown>
+		</detailsForm>
+		<optionsForm>
+			<hGroup1>
+				<left>
+					178
+				</left>
+			</hGroup1>
+			<hGroup2>
+				<left>
+					130
+				</left>
+			</hGroup2>
+			<languageLabel>
+				<text>
+					Idioma:
+				</text>
+			</languageLabel>
+			<temperatureLabel>
+				<text>
+					Visualización de la Temperatura:
+				</text>
+			</temperatureLabel>
+			<clockLabel>
+				<text>
+					Visualización del Reloj:
+				</text>
+			</clockLabel>
+			<languageDropDown>
+				<prompt>
+					Select
+				</prompt>
+			</languageDropDown>
+			<fahrenheitRadioButton>
+				<label>
+					° F
+				</label>
+			</fahrenheitRadioButton>
+			<celsiusRadioButton>
+				<label>
+					° C
+				</label>
+			</celsiusRadioButton>
+			<twelveHourRadioButton>
+				<label>
+					12-horas
+				</label>
+			</twelveHourRadioButton>
+			<twentyFourHourRadioButton>
+				<label>
+					24-horas
+				</label>
+			</twentyFourHourRadioButton>
+			<turnWebcamLabel>
+				<text>
+					<part1>
+						Gire mi Webcam en Forma Automática
+					</part1>
+					<part2>
+						Cuando Entro en iMeet.
+					</part2>
+				</text>
+			</turnWebcamLabel>
+			<displayConnectPanelLabel>
+				<text>
+					<part1>
+						Visualice el Panel Connect
+					</part1>
+					<part2>
+						Cuando Entro en iMeet.
+					</part2>
+				</text>
+			</displayConnectPanelLabel>
+			<callComputerLabel>
+				<text>
+					<part1>
+						Llame a mi Ordenador de Forma Automática
+					</part1>
+					<part2>
+						Cuando Entro en iMeet.
+					</part2>
+				</text>
+			</callComputerLabel>
+			<turnWebcamButton>
+				<selectedLabel>
+					Sí
+				</selectedLabel>
+				<unSelectedLabel>
+					No
+				</unSelectedLabel>
+			</turnWebcamButton>
+			<displayConnectPanelButton>
+				<selectedLabel>
+					Sí
+				</selectedLabel>
+				<unSelectedLabel>
+					No
+				</unSelectedLabel>
+			</displayConnectPanelButton>
+			<callComputerButton>
+				<selectedLabel>
+					Sí
+				</selectedLabel>
+				<unSelectedLabel>
+					No
+				</unSelectedLabel>
+			</callComputerButton>
+		</optionsForm>
+		<bioForm>
+			<label>
+				<text>
+					Eres más que una cara bonita. Mostrar todos los presentes.
+				</text>
+			</label>
+		</bioForm>
+		<passwordForm>
+			<label>
+				<text>
+					Cambiar la contraseña de la cuenta.
+				</text>
+			</label>
+			<label2>
+				<text>
+					<part1>
+						Mientras que cubrimos nuestros ojos, por favor, cambie su contraseña. se debe
+					</part1>
+					<part2>
+						Tener por lo menos cuatro caracteres con letras, números o una combinación de
+					</part2>
+					<part3>
+						de ambos.
+					</part3>
+				</text>
+			</label2>
+			<currentPasswordLabel>
+				<text>
+					Contraseña actual
+				</text>
+			</currentPasswordLabel>
+			<newPasswordLabel>
+				<text>
+					Nueva contraseña
+				</text>
+			</newPasswordLabel>
+			<confirmNewPasswordLabel>
+				<text>
+					Confirmar nueva contraseña
+				</text>
+			</confirmNewPasswordLabel>
+			<forgoPasswordLabel>
+				<text>
+					¿Olvidó su contraseña?
+				</text>
+			</forgoPasswordLabel>
+			<saveButton>
+				<label>
+					SAVE
+				</label>
+			</saveButton>
+		</passwordForm>
+		<privacyForm>
+			<downloadContactDetailsLabel>
+				<text>
+					<part1>
+						¿Quieres dejar que otros descargar su contacto
+					</part1>
+					<part2>
+						información como VCARD
+					</part2>
+				</text>
+			</downloadContactDetailsLabel>
+		</privacyForm>
+	</editProfile>
+	<settings>
+		<title>
+			AJUSTES
+		</title>
+		<title2>
+			Cambia el look de tu habitación o hacer una iMEETING PRIVADO.
+		</title2>
+		<footerLabel>
+			<text>
+				* Los cargos de uso basados ​​en aplicar.
+			</text>
+		</footerLabel>
+		<intlPricingLabel>
+			<text>
+				Ver tabla de precios internacionales
+			</text>
+		</intlPricingLabel>
+		<doneButton>
+			<label>
+				HECHO
+			</label>
+		</doneButton>
+		<settingsTab>
+			<roomKeyAndUrl>
+				<label>
+					Room Key y URL
+				</label>
+				<width>
+					80
+				</width>
+			</roomKeyAndUrl>
+			<roomNameAndTheme>
+				<label>
+					Habitación Nombre Y Tema
+				</label>
+				<width>
+					120
+				</width>
+			</roomNameAndTheme>
+			<smsOrEmailMessages>
+				<label>
+					SMS/Email Mensajes
+				</label>
+				<width>
+					95
+				</width>
+			</smsOrEmailMessages>
+			<dialingOptions>
+				<label>
+					Opciones de marcado
+				</label>
+				<width>
+					90
+				</width>
+			</dialingOptions>
+			<rightHorizontalLine>
+				<width>
+					4
+				</width>
+			</rightHorizontalLine>
+		</settingsTab>
+		<dialingOptionsForm>
+			<label>
+				<text>
+					¿Necesita hablar con invitados de todo el mundo?
+				</text>
+			</label>
+			<intlDialingLabel>
+				<text>
+					Habilitar Discado Internacional *
+				</text>
+			</intlDialingLabel>
+			<label2>
+				<text>
+					<part1>
+						Cuando la música en retención está activada, personas que llaman con
+					</part1>
+					<part2>
+						una tecla de audio se pone en espera con música hasta la
+					</part2>
+					<part3>
+						host se une a la llamada.
+					</part3>
+				</text>
+			</label2>
+			<musicOnHoldLabel>
+				<text>
+					Habilitar Música en espera
+				</text>
+			</musicOnHoldLabel>
+			<label3>
+				<text>
+					<part1>
+						Asigne el número de teléfono al que desea que aparezca cuando
+					</part1>
+					<part2>
+						iMeet llama a sus invitados. Si se deja sin cambios, su principal
+					</part2>
+					<part3>
+						número de teléfono se establece de forma predeterminada.
+					</part3>
+				</text>
+			</label3>
+			<iMeetCallerIdLabel>
+				<text>
+					iMeet identificador de llamadas
+				</text>
+			</iMeetCallerIdLabel>
+		</dialingOptionsForm>
+		<smsOrEmailMessagesForm>
+			<label1>
+				<text>
+					Elige cómo iMeet le notifique cuando un cliente entra en su habitación y usted no está allí.
+				</text>
+			</label1>
+			<labelEnableSms>
+				<text>
+					Activar texto SMS
+				</text>
+			</labelEnableSms>
+			<labelEnableEmail>
+				<text>
+					Activar correo electrónico
+				</text>
+			</labelEnableEmail>
+			<labelEmailAddress>
+				<text>
+					Email dirección
+				</text>
+			</labelEmailAddress>
+			<labelMobileNumber>
+				<text>
+					Número de móvil
+				</text>
+			</labelMobileNumber>
+			<labelInfoMsg>
+				<text>
+					Ando atrasado o cambio de plan? Mostrar un mensaje en la habitación para los huéspedes.
+				</text>
+			</labelInfoMsg>
+			<labelKeyword>
+				<text>
+					palabra clave
+				</text>
+			</labelKeyword>
+			<labelCustomMessage>
+				<text>
+					Mensaje Personalizado
+				</text>
+			</labelCustomMessage>
+		</smsOrEmailMessagesForm>
+		<roomKeyAndUrlForm>
+			<hGroup>
+				<horizontalgap>
+					12
+				</horizontalgap>
+			</hGroup>
+			<doorTickBoxElement>
+				<left>
+					136
+				</left>
+			</doorTickBoxElement>
+			<label1>
+				<text>
+					<part1>
+						¿Quiere una reunión privada? Coge una llave de la habitación.
+					</part1>
+					<part2>
+						Cambiar la llave de la habitación a menudo para defenderse de los colados de reuniones.
+					</part2>
+				</text>
+			</label1>
+			<roomKeyLabel>
+				<text>
+					Llave de la habitación
+				</text>
+			</roomKeyLabel>
+			<doorTickBox>
+				<label>
+					No, gracias, deje la puerta de la habitación abierta.
+				</label>
+			</doorTickBox>
+			<label2>
+				<text>
+					Cambiar mi dirección de habitación iMeet.
+				</text>
+			</label2>
+			<label3>
+				<text>
+					No se pueden hacer cambios con los huéspedes en su habitación.
+				</text>
+			</label3>
+			<changeButton>
+				<label>
+					CAMBIO
+				</label>
+			</changeButton>
+		</roomKeyAndUrlForm>
+	</settings>
+</data>
