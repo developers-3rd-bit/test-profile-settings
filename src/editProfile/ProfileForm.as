@@ -2,13 +2,13 @@ package editProfile
 {
    import com.halcyon.layout.common.HalcyonHGroup;
    import com.halcyon.layout.common.HalcyonLabel;
+   import com.halcyon.layout.common.HalcyonLabelOnlyButton;
    import com.halcyon.layout.common.HalcyonTextInput;
    import com.halcyon.layout.common.HalcyonVGroup;
    import com.halcyon.layout.common.LabelUpdater;
    import com.halcyon.layout.common.Utils;
    
    import common.HalcyonAbstractForm;
-   import common.LabelOnlyButton;
    
    import flash.events.Event;
    import flash.events.MouseEvent;
@@ -29,7 +29,7 @@ package editProfile
       private var _lastNameTextField:HalcyonTextInput;
       private var _emailLabel:HalcyonLabel;
       private var _emailTextField:TextField;
-      private var _editButton:LabelOnlyButton;
+      private var _editButton:HalcyonLabelOnlyButton;
       private var _label3:HalcyonLabel;
       
       public function ProfileForm()
@@ -71,7 +71,7 @@ package editProfile
          _emailTextField.width = 145;
          _emailTextField.height = 18;
          hGroup.addChild(_emailTextField);
-         _editButton = new LabelOnlyButton(hGroup);
+         _editButton = new HalcyonLabelOnlyButton(hGroup);
          _editButton.fontSize = 9;
          _editButton.addEventListener(MouseEvent.CLICK, onEditButtonClick, false, 0, true);
          hGroup.addChild(_editButton);

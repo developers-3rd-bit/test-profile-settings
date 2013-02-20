@@ -3,12 +3,11 @@ package
    import com.halcyon.layout.common.HalcyonButton;
    import com.halcyon.layout.common.HalcyonCanvas;
    import com.halcyon.layout.common.HalcyonLabel;
+   import com.halcyon.layout.common.HalcyonLabelOnlyButton;
    import com.halcyon.layout.common.HalcyonTab;
    import com.halcyon.layout.common.LabelUpdater;
    import com.halcyon.layout.common.LayoutEvent;
    import com.halcyon.layout.common.Utils;
-   
-   import common.LabelOnlyButton;
    
    import editProfile.EditProfileMain;
    import editProfile.EditProfileTab;
@@ -29,7 +28,7 @@ package
       private var _editProfileMain:EditProfileMain;
       private var _localeDropDown:ComboBox;
       private var _title:HalcyonLabel;
-      private var _doneButton:LabelOnlyButton;
+      private var _doneButton:HalcyonLabelOnlyButton;
       private var _canvas:HalcyonCanvas;
       
       public function TestEditProfileScreen()
@@ -69,7 +68,7 @@ package
          var mcDividerBottom:McDivider = new McDivider();
          this.addChild(_canvas.prepareElementAndPosition(mcDividerBottom, 320, NaN, 10, NaN));
          
-         _doneButton = new LabelOnlyButton(this);
+         _doneButton = new HalcyonLabelOnlyButton(this);
          _doneButton.addEventListener(MouseEvent.CLICK, onDoneButtonClick, false, 0, true);
          this.addChild(_canvas.prepareElementAndPosition(_doneButton, 325, NaN, NaN, 8));
          

@@ -1,9 +1,9 @@
 package settings
 {
-   import com.halcyon.layout.common.HalcyonButton;
    import com.halcyon.layout.common.HalcyonCanvas;
    import com.halcyon.layout.common.HalcyonHGroup;
    import com.halcyon.layout.common.HalcyonLabel;
+   import com.halcyon.layout.common.HalcyonLabelOnlyButton;
    import com.halcyon.layout.common.HalcyonTextInput;
    import com.halcyon.layout.common.HalcyonTickBox;
    import com.halcyon.layout.common.HalcyonVGroup;
@@ -12,7 +12,6 @@ package settings
    import com.soma.ui.ElementUI;
    
    import common.HalcyonAbstractForm;
-   import common.LabelOnlyButton;
    
    import flash.events.Event;
    import flash.events.MouseEvent;
@@ -32,7 +31,7 @@ package settings
       private var _label2:HalcyonLabel;
       private var _label3:HalcyonLabel;
       private var _iMeetRoomAddressTextField:TextField;
-      private var _changeButton:LabelOnlyButton;
+      private var _changeButton:HalcyonLabelOnlyButton;
       private var _hGroup:HalcyonHGroup;
       private var _doorTickBoxElement:ElementUI;
       
@@ -78,7 +77,7 @@ package settings
          _iMeetRoomAddressTextField.width = 200;
          _iMeetRoomAddressTextField.height = 18;
          hGroup2.addChild(_iMeetRoomAddressTextField);
-         _changeButton = new LabelOnlyButton(hGroup2);
+         _changeButton = new HalcyonLabelOnlyButton(hGroup2);
          _changeButton.fontSize = 8;
          hGroup2.addChild(_changeButton);
          vGroup.addChild(hGroup2);

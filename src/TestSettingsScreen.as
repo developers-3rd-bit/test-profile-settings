@@ -3,12 +3,11 @@ package
    import com.halcyon.layout.common.HalcyonButton;
    import com.halcyon.layout.common.HalcyonCanvas;
    import com.halcyon.layout.common.HalcyonLabel;
+   import com.halcyon.layout.common.HalcyonLabelOnlyButton;
    import com.halcyon.layout.common.HalcyonTab;
    import com.halcyon.layout.common.LabelUpdater;
    import com.halcyon.layout.common.LayoutEvent;
    import com.halcyon.layout.common.Utils;
-   
-   import common.LabelOnlyButton;
    
    import fl.controls.ComboBox;
    
@@ -33,7 +32,7 @@ package
       private var _localeDropDown:ComboBox;
       private var _title:HalcyonLabel;
       private var _title2:HalcyonLabel;
-      private var _doneButton:LabelOnlyButton;
+      private var _doneButton:HalcyonLabelOnlyButton;
       private var _canvas:HalcyonCanvas; 
       
       public function TestSettingsScreen()
@@ -86,7 +85,7 @@ package
          _intlPricingLabel.visible = false;
          this.addChild(_canvas.prepareElementAndPosition(_intlPricingLabel, 325, NaN, 125, NaN));
          
-         _doneButton = new LabelOnlyButton(_canvas);
+         _doneButton = new HalcyonLabelOnlyButton(_canvas);
          _doneButton.addEventListener(MouseEvent.CLICK, onDoneButtonClick, false, 0, true);
          this.addChild(_canvas.prepareElementAndPosition(_doneButton, 325, NaN, NaN, 8));
          

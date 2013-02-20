@@ -1,6 +1,7 @@
 package editProfile
 {
    import com.halcyon.layout.common.HalcyonLabel;
+   import com.halcyon.layout.common.HalcyonLabelOnlyButton;
    import com.halcyon.layout.common.HalcyonTextInput;
    import com.halcyon.layout.common.HalcyonVGroup;
    import com.halcyon.layout.common.LabelUpdater;
@@ -8,7 +9,6 @@ package editProfile
    import com.soma.ui.layouts.VBoxUI;
    
    import common.HalcyonAbstractForm;
-   import common.LabelOnlyButton;
    
    import flash.display.Sprite;
    import flash.events.Event;
@@ -27,7 +27,7 @@ package editProfile
       private var _confirmNewPasswordLabel:HalcyonLabel;
       private var _confirmNewPasswordTextField:HalcyonTextInput;
       private var _forgoPasswordLabel:HalcyonLabel;
-      private var _saveButton:LabelOnlyButton;
+      private var _saveButton:HalcyonLabelOnlyButton;
       private var _actionVGroup:HalcyonVGroup;
       
       public function PasswordForm()
@@ -67,7 +67,7 @@ package editProfile
          _forgoPasswordLabel.underline = true;
          _forgoPasswordLabel.buttonMode = true;
          _actionVGroup.addChild(_forgoPasswordLabel);
-         _saveButton = new LabelOnlyButton(_actionVGroup);
+         _saveButton = new HalcyonLabelOnlyButton(_actionVGroup);
          _saveButton.fontSize = 9;
          _saveButton.addEventListener(MouseEvent.CLICK, onSaveButtonClick, false, 0, true);
          _actionVGroup.addChild(_saveButton);
