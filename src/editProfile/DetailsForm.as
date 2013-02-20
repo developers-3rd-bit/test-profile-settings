@@ -3,7 +3,6 @@ package editProfile
    import com.halcyon.layout.common.HalcyonHGroup;
    import com.halcyon.layout.common.HalcyonLabel;
    import com.halcyon.layout.common.HalcyonTextInput;
-   import com.halcyon.layout.common.HalcyonTickBox;
    import com.halcyon.layout.common.HalcyonVGroup;
    import com.halcyon.layout.common.LabelUpdater;
    import com.halcyon.layout.common.Utils;
@@ -12,6 +11,7 @@ package editProfile
    import common.HalcyonAbstractForm;
    
    import fl.controls.Button;
+   import fl.controls.CheckBox;
    import fl.controls.ComboBox;
    
    import flash.events.Event;
@@ -32,9 +32,10 @@ package editProfile
       private var _addPrimaryPhoneButton:Button;
       private var _primaryPhoneInfoLabel:HalcyonLabel;
       private var _locationLabel:HalcyonLabel;
-      private var _locationTickBox:HalcyonTickBox;
+      private var _locationCheckBox:CheckBox;
       private var _findMyLocationInfoLabel:HalcyonLabel;
       private var _actionVGroup:HalcyonVGroup;
+      private var _locationHGroup:HalcyonHGroup;
       
       public function DetailsForm()
       {
@@ -78,26 +79,27 @@ package editProfile
          primaryPhoneVGroup.addChild(_primaryPhoneInfoLabel);
          _actionVGroup.addChild(primaryPhoneVGroup);
          
-         var locationHGroup:HalcyonHGroup = new HalcyonHGroup(vGroup);
-         locationHGroup.childrenAlign = HBoxUI.ALIGN_BOTTOM_LEFT;
-         locationHGroup.horizontalgap = 76;
-         locationHGroup.top = 85;
+         _locationHGroup = new HalcyonHGroup(vGroup);
+         _locationHGroup.childrenAlign = HBoxUI.ALIGN_BOTTOM_LEFT;
+         _locationHGroup.horizontalgap = 30;
+         _locationHGroup.top = 90;
          _locationLabel = new HalcyonLabel();
-         locationHGroup.addChild(_locationLabel);
-         var locationLabelVgroup:HalcyonVGroup = new HalcyonVGroup(locationHGroup);
-         locationLabelVgroup.paddingTop = 18;
+         _locationHGroup.addChild(_locationLabel);
+         var locationLabelVgroup:HalcyonVGroup = new HalcyonVGroup(_locationHGroup);
+         locationLabelVgroup.paddingTop = -3;
          locationLabelVgroup.verticalGap = 0;
-         _locationTickBox = new HalcyonTickBox();
-         locationLabelVgroup.addChild(_locationTickBox.content);
+         _locationCheckBox = new CheckBox();
+         _locationCheckBox.width = 180;
+         locationLabelVgroup.addChild(_locationCheckBox);
          _findMyLocationInfoLabel = new HalcyonLabel();
          locationLabelVgroup.addChild(_findMyLocationInfoLabel);
-         locationHGroup.addChild(locationLabelVgroup);
-         _actionVGroup.addChild(locationHGroup);
+         _locationHGroup.addChild(locationLabelVgroup);
+         _actionVGroup.addChild(_locationHGroup);
          
          _jobTitleTextField.addEventListener("textChange", onValueChange, false, 0, true);
          _companyNameTextField.addEventListener("textChange", onValueChange, false, 0, true);
          _primaryPhoneDropDown.addEventListener(Event.CHANGE, onValueChange, false, 0, true);
-         _locationTickBox.addEventListener("tickBoxStateChange", onLocationTickBoxClick, false, 0, true);
+         _locationCheckBox.addEventListener(MouseEvent.CLICK, onLocationTickBoxClick, false, 0, true);
          
          this.addChild(vGroup);
          this.addChild(_actionVGroup);
@@ -106,20 +108,21 @@ package editProfile
       public function updateLabel():void 
       {
          var detailsFormNode:Object = Utils.resourcesXml.editProfile.detailsForm;
-         _actionVGroup.left = detailsFormNode.actionVGroup.left;
-         _actionVGroup.refresh();
          _jobTitleLabel.label = detailsFormNode.jobTitleLabel.text;
          _companyNameLabel.label = detailsFormNode.companyNameLabel.text;
          _primaryPhoneLabel.label = detailsFormNode.primaryPhoneLabel.text;
          _primaryPhoneDropDown.prompt = detailsFormNode.primaryPhoneDropDown.prompt;
          _primaryPhoneInfoLabel.label = detailsFormNode.primaryPhoneInfoLabel.text;
          _locationLabel.label = detailsFormNode.locationLabel.text;
-         _locationTickBox.label = detailsFormNode.locationTickBox.label;
+         _locationCheckBox.label = detailsFormNode.locationTickBox.label;
+         _locationHGroup.horizontalgap = detailsFormNode.locationHGroup.horizontalgap;
+         _actionVGroup.left = detailsFormNode.actionVGroup.left;
+         _actionVGroup.refresh();
       }
       
       private function onLocationTickBoxClick(event:Event):void 
       {
-         _findMyLocationInfoLabel.visible = _locationTickBox.selected;
+         _findMyLocationInfoLabel.visible = _locationCheckBox.selected;
          onValueChange(event);
       }
       
@@ -134,8 +137,8 @@ package editProfile
          _jobTitleTextField.text = _user.getTitle();
          _companyNameTextField.text = _user.getCompany();
          _primaryPhoneDropDown.selectedItem = _user.primaryPhone;
-         _locationTickBox.selected = _user.enableLocationDetection;
-         if(_locationTickBox.selected)
+         _locationCheckBox.selected = _user.enableLocationDetection;
+         if(_locationCheckBox.selected)
             _findMyLocationInfoLabel.label = _user.getLocation();
       }
       
@@ -145,8 +148,8 @@ package editProfile
          _user.setTitle(StringUtil.trim(_jobTitleTextField.text));
          _user.setCompany(StringUtil.trim(_companyNameTextField.text));
          _user.primaryPhone = _primaryPhoneDropDown.selectedItem as String;
-         _user.enableLocationDetection = _locationTickBox.selected;
-         if(_locationTickBox.selected)
+         _user.enableLocationDetection = _locationCheckBox.selected;
+         if(_locationCheckBox.selected)
             _user.setLocation(_findMyLocationInfoLabel.label);
          return _user;
       }

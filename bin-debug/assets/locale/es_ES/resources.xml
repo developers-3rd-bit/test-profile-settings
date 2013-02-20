@@ -110,6 +110,11 @@
 			</label3>
 		</profileForm>
 		<detailsForm>
+			<locationHGroup>
+				<horizontalgap>
+					57
+				</horizontalgap>
+			</locationHGroup>
 			<actionVGroup>
 				<left>
 					100
@@ -481,7 +486,7 @@
 			</hGroup>
 			<doorTickBoxElement>
 				<left>
-					136
+					124
 				</left>
 			</doorTickBoxElement>
 			<label1>

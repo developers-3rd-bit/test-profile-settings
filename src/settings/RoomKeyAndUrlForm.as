@@ -5,13 +5,14 @@ package settings
    import com.halcyon.layout.common.HalcyonLabel;
    import com.halcyon.layout.common.HalcyonLabelOnlyButton;
    import com.halcyon.layout.common.HalcyonTextInput;
-   import com.halcyon.layout.common.HalcyonTickBox;
    import com.halcyon.layout.common.HalcyonVGroup;
    import com.halcyon.layout.common.LabelUpdater;
    import com.halcyon.layout.common.Utils;
    import com.soma.ui.ElementUI;
    
    import common.HalcyonAbstractForm;
+   
+   import fl.controls.CheckBox;
    
    import flash.events.Event;
    import flash.events.MouseEvent;
@@ -27,13 +28,13 @@ package settings
       private var _label1:HalcyonLabel;
       private var _roomKeyLabel:HalcyonLabel;
       private var _roomKeyTextField:HalcyonTextInput;
-      private var _doorTickBox:HalcyonTickBox;
+      private var _doorCheckBox:CheckBox;
       private var _label2:HalcyonLabel;
       private var _label3:HalcyonLabel;
       private var _iMeetRoomAddressTextField:TextField;
       private var _changeButton:HalcyonLabelOnlyButton;
       private var _hGroup:HalcyonHGroup;
-      private var _doorTickBoxElement:ElementUI;
+      private var _doorCheckBoxElement:ElementUI;
       
       public function RoomKeyAndUrlForm()
       {
@@ -54,10 +55,11 @@ package settings
          vGroup1.verticalGap = 3;
          _roomKeyTextField = new HalcyonTextInput(180);
          vGroup1.addChild(_roomKeyTextField.content);
-         _doorTickBox = new HalcyonTickBox();
-         _doorTickBox.addEventListener("tickBoxStateChange", onValueChange, false, 0, true);
-         _doorTickBoxElement = new HalcyonCanvas(this).add(_doorTickBox.content);
-         vGroup1.addChild(_doorTickBoxElement.object);
+         _doorCheckBox = new CheckBox();
+         _doorCheckBox.width = 280;
+         _doorCheckBox.addEventListener(MouseEvent.CLICK, onValueChange, false, 0, true);
+         _doorCheckBoxElement = new HalcyonCanvas(this).add(_doorCheckBox);
+         vGroup1.addChild(_doorCheckBoxElement.object);
          _hGroup.addChild(vGroup1);
          _hGroup.height = 45;
          vGroup.addChild(_hGroup);
@@ -85,7 +87,7 @@ package settings
          _roomKeyTextField.addEventListener("textChange", onValueChange, false, 0, true);
          _iMeetRoomAddressTextField.addEventListener("textChange", onValueChange, false, 0, true);
          _changeButton.addEventListener(MouseEvent.CLICK, onChangeButtonClick, false, 0, true);
-         _doorTickBox.addEventListener("tickBoxStateChange", onDoorTickBoxClick, false, 0, true);
+         _doorCheckBox.addEventListener("tickBoxStateChange", onDoorTickBoxClick, false, 0, true);
          
          this.addChild(vGroup);
       }
@@ -95,20 +97,20 @@ package settings
          var roomKeyAndUrlFormNode:Object = Utils.resourcesXml.settings.roomKeyAndUrlForm;
          _label1.label = roomKeyAndUrlFormNode.label1.text.part1 + "\n" + roomKeyAndUrlFormNode.label1.text.part2;
          _roomKeyLabel.label = roomKeyAndUrlFormNode.roomKeyLabel.text;
-         _doorTickBox.label = roomKeyAndUrlFormNode.doorTickBox.label;
+         _doorCheckBox.label = roomKeyAndUrlFormNode.doorTickBox.label;
          _label2.label = roomKeyAndUrlFormNode.label2.text;
          _label3.label = roomKeyAndUrlFormNode.label3.text;
          _changeButton.label = roomKeyAndUrlFormNode.changeButton.label;
          _hGroup.horizontalgap = roomKeyAndUrlFormNode.hGroup.horizontalgap;
          _hGroup.refresh();
-         _doorTickBoxElement.top = 160;
-         _doorTickBoxElement.left = roomKeyAndUrlFormNode.doorTickBoxElement.left;
-         _doorTickBoxElement.refresh();
+         _doorCheckBoxElement.top = 150;
+         _doorCheckBoxElement.left = roomKeyAndUrlFormNode.doorTickBoxElement.left;
+         _doorCheckBoxElement.refresh();
       }
       
       private function onDoorTickBoxClick(event:Event):void 
       {
-         if(_doorTickBox.selected) 
+         if(_doorCheckBox.selected) 
             _roomKeyTextField.text = "";
          onValueChange(event);
       }
@@ -123,7 +125,7 @@ package settings
          _user = argUser;
          _roomKeyTextField.text = _user.roomKey;//using dummy field
          _iMeetRoomAddressTextField.text = _user.iMeetRoomAddress;//using dummy field
-         _doorTickBox.selected = _user.isRoomOpen;//using dummy field
+         _doorCheckBox.selected = _user.isRoomOpen;//using dummy field
       }
       
       override public function getUpdate():User
@@ -131,7 +133,7 @@ package settings
          if(isModified == false) return _user;
          _user.roomKey = StringUtil.trim(_roomKeyTextField.text);//using dummy field
          _user.iMeetRoomAddress = StringUtil.trim(_iMeetRoomAddressTextField.text);//using dummy field
-         _user.isRoomOpen = _doorTickBox.selected;//using dummy field
+         _user.isRoomOpen = _doorCheckBox.selected;//using dummy field
          return _user;
       }
    }
